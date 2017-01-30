@@ -8,30 +8,33 @@ and open the template in the editor.
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script>
             
             $(document).ready(function(){
-                $('#show').hide();
+                $('#star').hide();
                 
-                $('#hide').click(function(){
-                    $('#show').show();
-                    $('#hide').hide();
+                $('#button').click(function(){
+                    $('#star').show();
+                    $('#button').hide();
                 });
                 
-                $('#show').click(function(){
+                $('#star').click(function(){
                    
                     $('#form').show();
                 });
+                
+                
             });
         </script>
     </head>
     <body>
-        <div class="button" id="hide"><button name="rate" >Rate us</button></div>
-      <span class="starRating" id="show">
+        <div class="button" id="button"><button name="rate" >Rate us</button></div>
+      <span class="starRating" id="star">
         <input id="star1" type="radio" name="rating" value="1">
         <label for="star1">1</label>
         <input id="star2" type="radio" name="rating" value="2">
@@ -43,11 +46,9 @@ and open the template in the editor.
         <input id="star5" type="radio" name="rating" value="5">
         <label for="star5">5</label>
       </span>
-        <div class="feedback">
-        <form id="form">
-            <textarea rows="5" cols="50" id="area">
-                
-            </textarea>
+        <div class="feedback" id="formDiv">
+            <textarea rows="5" cols="50" form="feedbackform">Enter your feedback here...</textarea>
+            <form name="feedbackform" action="">        
             <input type="submit" value="send feedback">
         </form>
         </div>          
