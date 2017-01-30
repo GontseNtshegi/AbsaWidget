@@ -11,22 +11,45 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
        
         <link rel="stylesheet" href="style.css">
-        
-     
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            
+            $(document).ready(function(){
+                $('#show').hide();
+                
+                $('#hide').click(function(){
+                    $('#show').show();
+                    $('#hide').hide();
+                });
+                
+                $('#show').click(function(){
+                   
+                    $('#form').show();
+                });
+            });
+        </script>
     </head>
     <body>
-      <span class="starRating">
-  <input id="rating5" type="radio" name="rating" value="5">
-  <label for="rating5">5</label>
-  <input id="rating4" type="radio" name="rating" value="4">
-  <label for="rating4">4</label>
-  <input id="rating3" type="radio" name="rating" value="3">
-  <label for="rating3">3</label>
-  <input id="rating2" type="radio" name="rating" value="2">
-  <label for="rating2">2</label>
-  <input id="rating1" type="radio" name="rating" value="1">
-  <label for="rating1">1</label>
-</span>
-
+        <div class="button" id="hide"><button name="rate" >Rate us</button></div>
+      <span class="starRating" id="show">
+        <input id="star1" type="radio" name="rating" value="1">
+        <label for="star1">1</label>
+        <input id="star2" type="radio" name="rating" value="2">
+        <label for="star2">2</label>
+        <input id="star3" type="radio" name="rating" value="3">
+        <label for="star3">3</label>
+        <input id="star4" type="radio" name="rating" value="4">
+        <label for="star4">4</label>
+        <input id="star5" type="radio" name="rating" value="5">
+        <label for="star5">5</label>
+      </span>
+        <div class="feedback">
+        <form id="form">
+            <textarea rows="5" cols="50" id="area">
+                
+            </textarea>
+            <input type="submit" value="send feedback">
+        </form>
+        </div>          
     </body>
 </html>
