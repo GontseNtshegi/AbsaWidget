@@ -1,6 +1,6 @@
 .starRating:not(old){
   display        : inline-block;
-  width          : 7.5em;
+  width          : 8.5em;
   height         : 1.5em;
   overflow       : hidden;
   vertical-align : bottom;
@@ -75,5 +75,53 @@ textarea#area {
      input[type=submit]{
          margin:10px 0px 0 450px;
          
+     }
+     .starRating{
+         margin:10px 0 0 200px;
+     }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) { /***** For Laptop Screens *****/
+    body{
+    max-width: 490px;
+    max-height: 190px;
+    
+}
+textarea#area {
+	width: 450px;
+	height: 114px;
+	border: 4px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	background-repeat: no-repeat;
+        border-radius: 5px;
+        margin: 10px 0 0 0;
+        }
+       
+.toggler {
+    width: 450px;
+    height: 160px;
+  }
+  
+  button,input[type=submit]{
+         
+           width: 120px;
+           height: 30px;
+           display: inline-block;
+            background-color: greenyellow;
+            font-size: 9px;
+            font-family: Tahoma, sans-serif;
+            appearance: none;
+            box-shadow: none;
+            border-radius: 15px 50px;
+            font-weight: bold;
+     }
+     input[type=submit]{
+         margin:10px 0px 0 450px;
+         
+     }
+     .starRating{
+         margin:10px 0 0 300px;
      }
 }
