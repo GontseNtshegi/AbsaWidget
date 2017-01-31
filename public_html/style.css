@@ -1,15 +1,22 @@
+body{
+    border: 3px solid green;
+}
+
+
+
+@media screen and (min-device-width:1600px) and (max-device-width:2000px) { /***** For Desktop Screens *****/
 .starRating:not(old){
   display        : inline-block;
   width          : 7.5em;
   height         : 1.5em;
   overflow       : hidden;
   vertical-align : bottom;
-}
+    }
 
 .starRating:not(old) > input{
   margin-right : -100%;
   opacity      : 0;
-}
+   }
 
 .starRating:not(old) > label{
   display         : block;
@@ -17,7 +24,7 @@
   position        : relative;
   background      : url('star-off.png');
   background-size : contain;
-}
+    }
 
 .starRating:not(old) > label:before{
   content         : '';
@@ -28,15 +35,13 @@
   background-size : contain;
   opacity         : 0;
   transition      : opacity 0.2s linear;
-}
+     }
 
 .starRating:not(old) > label:hover:before,
 .starRating:not(old) > label:hover ~ label:before,
 .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
-}
-
-@media (min-device-width:600px){
+     }   
 textarea#area {
 	width: 600px;
 	height: 120px;
@@ -45,5 +50,5 @@ textarea#area {
 	font-family: Tahoma, sans-serif;
 	background-position: bottom right;
 	background-repeat: no-repeat;
-}
-}
+        }
+  }

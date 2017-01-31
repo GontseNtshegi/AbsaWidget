@@ -12,7 +12,9 @@ and open the template in the editor.
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             
             $(document).ready(function(){
@@ -33,8 +35,9 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-        <div class="button" id="button"><button name="rate" >Rate us</button></div>
-      <span class="starRating" id="star">
+    <div>
+       <button name="rate" class="ui-button ui-widget ui-corner-all">Rate us</button>
+         <span class="starRating" id="star">
         <input id="star1" type="radio" name="rating" value="1">
         <label for="star1">1</label>
         <input id="star2" type="radio" name="rating" value="2">
@@ -45,12 +48,13 @@ and open the template in the editor.
         <label for="star4">4</label>
         <input id="star5" type="radio" name="rating" value="5">
         <label for="star5">5</label>
-      </span>
-        <div class="feedback" id="formDiv">
+         </span>
+         <div class="feedback" id="formDiv">
             <textarea rows="5" cols="50" form="feedbackform">Enter your feedback here...</textarea>
             <form name="feedbackform" action="">        
             <input type="submit" value="send feedback">
-        </form>
-        </div>          
+          </form>
+          </div>
+    </div>
     </body>
 </html>
