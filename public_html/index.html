@@ -53,17 +53,15 @@ and open the template in the editor.
                 $('button').click(function(){// hide Rate us button 
                     $('#star').show("highlight",1000);
                     $('button').hide();
-                });
-                
-                $('#star').click(function(){
-                   $( ".toggler" ).show( "blind", 1000 );
+                    $( ".toggler" ).show( "blind", 1000 );
                 });
                 
                 $('input[type=submit]').click(function(){//when clicking send feedback
+                    alert("Rating and Feedback sent successfully");
                     $('button').show();
                     $( ".toggler" ).hide("blind");
                     $('#star').hide();
-                    alert("Rating and Feedback sent successfully");
+                   
                 });
                 
                

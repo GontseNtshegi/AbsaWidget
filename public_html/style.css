@@ -50,23 +50,30 @@ textarea#area {
 	font-family: Tahoma, sans-serif;
 	background-position: bottom right;
 	background-repeat: no-repeat;
+        border-radius: 5px;
+        margin: 10px 0 0 0;
         }
        
 .toggler {
     width: 600px;
     height: 200px;
   }
+  
   button,input[type=submit]{
          
            width: 150px;
            height: 50px;
            display: inline-block;
-          /*  margin: 0 10px 0 0;*/
-           /* padding: 20px 20px;*/
+            background-color: greenyellow;
             font-size: 15px;
             font-family: Tahoma, sans-serif;
             appearance: none;
             box-shadow: none;
-            border-radius: 0;
+            border-radius: 15px 50px;
+            font-weight: bold;
+     }
+     input[type=submit]{
+         margin:10px 0px 0 450px;
+         
      }
 }
