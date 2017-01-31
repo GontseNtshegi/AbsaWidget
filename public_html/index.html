@@ -14,30 +14,13 @@ and open the template in the editor.
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
-            
-            $(document).ready(function(){
-                $('#star').hide();
-                
-                $('#button').click(function(){
-                    $('#star').show();
-                    $('#button').hide();
-                });
-                
-                $('#star').click(function(){
-                   
-                    $('#form').show();
-                });
-                
-                
-            });
-        </script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>     
     </head>
     <body>
     <div>
        <button name="rate" class="ui-button ui-widget ui-corner-all">Rate us</button>
-         <span class="starRating" id="star">
+       
+       <span class="starRating" id="star">
         <input id="star1" type="radio" name="rating" value="1">
         <label for="star1">1</label>
         <input id="star2" type="radio" name="rating" value="2">
@@ -48,13 +31,43 @@ and open the template in the editor.
         <label for="star4">4</label>
         <input id="star5" type="radio" name="rating" value="5">
         <label for="star5">5</label>
-         </span>
-         <div class="feedback" id="formDiv">
-            <textarea rows="5" cols="50" form="feedbackform">Enter your feedback here...</textarea>
+       </span>
+       
+          <div class="toggler" class="ui-widget-content ui-corner-all">       
+            <textarea rows="5" cols="50" id="area">Enter your feedback here...</textarea>    
             <form name="feedbackform" action="">        
-            <input type="submit" value="send feedback">
-          </form>
+            <input type="submit" class="ui-button ui-widget ui-corner-all" value="send feedback">
+            </form>
+           
           </div>
     </div>
+         <script>
+            
+            $(document).ready(function(){
+              
+                $('#star').hide();
+                $('.toggler').hide();
+                
+                $('button').click(function(){// hide Rate us button 
+                    $('#star').show("slide",500);
+                    $('button').hide();
+                });
+                
+                $('#star').click(function(){
+                 //  $('.toggler').show();
+                   $( ".toggler" ).show( "blind", 1000 );
+                });
+                
+                $('input[type=submit]').click(function(){//when clicking send feedback
+                    $('button').show("slide");
+                    $( ".toggler" ).hide( "blind", 500 );
+                    $('#star').hide();
+                });
+                
+               
+            });
+            
+            
+        </script>
     </body>
 </html>
