@@ -51,22 +51,20 @@ textarea#area {
 	background-position: bottom right;
 	background-repeat: no-repeat;
         }
-        
+       
 .toggler {
     width: 600px;
     height: 200px;
   }
   button,input[type=submit]{
-         /*background-color: #0000ff;
-         color: black; text-decoration: none;*/
+         
            width: 150px;
            height: 50px;
            display: inline-block;
-            margin: 0 10px 0 0;
-            padding: 15px 45px;
-            font-size: 48px;
-            font-family: "Bitter",serif;
-            line-height: 1.8;
+          /*  margin: 0 10px 0 0;*/
+           /* padding: 20px 20px;*/
+            font-size: 15px;
+            font-family: Tahoma, sans-serif;
             appearance: none;
             box-shadow: none;
             border-radius: 0;

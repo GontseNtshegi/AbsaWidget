@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Rating Widget</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,7 +14,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>     
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>    
+        
+        
     </head>
     <body>
     <div>
@@ -36,7 +38,7 @@ and open the template in the editor.
           <div class="toggler" class="ui-widget-content ui-corner-all">       
             <textarea rows="5" cols="50" id="area">Enter your feedback here...</textarea>    
             <form name="feedbackform" action="">        
-            <input type="submit" class="ui-button ui-widget ui-corner-all" value="send feedback">
+            <input type="submit" class="ui-button ui-widget ui-corner-all" value="Send Feedback">
             </form>
            
           </div>
@@ -49,19 +51,19 @@ and open the template in the editor.
                 $('.toggler').hide();
                 
                 $('button').click(function(){// hide Rate us button 
-                    $('#star').show("slide",500);
+                    $('#star').show("highlight",1000);
                     $('button').hide();
                 });
                 
                 $('#star').click(function(){
-                 //  $('.toggler').show();
                    $( ".toggler" ).show( "blind", 1000 );
                 });
                 
                 $('input[type=submit]').click(function(){//when clicking send feedback
-                    $('button').show("slide");
-                    $( ".toggler" ).hide( "blind", 500 );
+                    $('button').show();
+                    $( ".toggler" ).hide("blind");
                     $('#star').hide();
+                    alert("Rating and Feedback sent successfully");
                 });
                 
                
