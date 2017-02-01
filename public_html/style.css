@@ -104,7 +104,7 @@ textarea#area {
     height: 160px;
   }
   
-  button,input[type=submit]{
+  button#rate,input[type=submit]{
          
            width: 120px;
            height: 30px;
