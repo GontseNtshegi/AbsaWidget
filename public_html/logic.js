@@ -3,9 +3,10 @@
                 $('.toggler').hide();
                 
                 $('button').click(function(){// hide Rate us button 
-                    $('#star').show("highlight",1000);
-                    $('button').hide();
                     $( ".toggler" ).show( "blind", 1000 );
+                    $('#star').show("highlight",500);
+                    $('button').hide();
+                    
                 });
                 
                 $('input[type=submit]').click(function(){//when clicking send feedback

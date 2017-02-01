@@ -1,6 +1,6 @@
 /*
  * Javascript to display the widget on any host page
- * Author gontse Ntshegi
+ * Author Gontse Ntshegi
  * Senior Full Stack Developer and Architect 
  */
 (function() {
@@ -9,11 +9,16 @@
 var jQuery;
 
 /******** Load jQuery if not present *********/
-function loadScript(url, callback) {
+function loadScript(url,url1, callback) {
   /* Load script from url and calls callback once it's loaded */
   var scriptTag = document.createElement('script');
   scriptTag.setAttribute("type", "text/javascript");
   scriptTag.setAttribute("src", url);
+  
+  var scriptTag1 = document.createElement('script');
+  scriptTag1.setAttribute("type", "text/javascript");
+  scriptTag1.setAttribute("src", url1);
+  
   if (typeof callback !== "undefined") {
     if (scriptTag.readyState) {
       /* For old versions of IE */
@@ -26,7 +31,8 @@ function loadScript(url, callback) {
       scriptTag.onload = callback;
     }
   }
-  (document.getElementsByTagName("head")[0] || document.documentElement).appendChild(scriptTag);
+  (document.getElementsByTagName("head")[0]).appendChild(scriptTag);
+  (document.getElementsByTagName("head")[0]).appendChild(scriptTag1);
 }
 
 
@@ -48,10 +54,7 @@ function main() {
             href: "//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" 
         });
         css_link.appendTo('head');
-  
-  /*********************************** SCRIPT  **********************************/      
-                    
-    });
+   
     $("div.rate-me-widget").html("<button id='rate' class='ui-button ui-widget ui-corner-all'>Rate us</button>"+
             "<span class='starRating' id='star'>"+
               "<input id='star1' type='radio' name='rating' value='1'>"+
@@ -72,26 +75,46 @@ function main() {
             "</form>"+           
            "</div>"
             );
-   
+    
+                $('#star').hide();
+                $('.toggler').hide();
+                
+                $('button').click(function(){// hide Rate us button 
+                    $( ".toggler" ).show( "blind", 1000 );
+                    $('#star').show("highlight",500);
+                    $('button').hide();
+                    
+                });
+                
+                $('input[type=submit]').click(function(){//when clicking send feedback
+                    alert("Rating and Feedback sent successfully");
+                    $('button').show();
+                    $( ".toggler" ).hide("blind");
+                    $('#star').hide();
+                   
+                });
+    });
 }
 
-loadScript("https://code.jquery.com/ui/1.12.1/jquery-ui.js", function() {
+//loadScript("https://code.jquery.com/ui/1.12.1/jquery-ui.js", function() {
   /* Restore $ and window.jQuery to their previous values and store the
      new jQuery in our local jQuery variables. */
-  $ = jQuery = window.jQuery.noConflict(true);
-  main(); /* Execute the main logic of our widget once jQuery is loaded */
-});
-loadScript("https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js", function() {
-  /* Restore $ and window.jQuery to their previous values and store the
-     new jQuery in our local jQuery variables. */
-  $ = jQuery = window.jQuery.noConflict(true);
-  main(); /* Execute the main logic of our widget once jQuery is loaded */
-});
-//loadScript("logic.js", function() {
+  //$ = jQuery = window.jQuery.noConflict(true);
+  //main(); /* Execute the main logic of our widget once jQuery is loaded */
+//});
+//loadScript("logic.js");//, function() {
   /* Restore $ and window.jQuery to their previous values and store the
      new jQuery in our local jQuery variables. */
   //$ = jQuery = window.jQuery.noConflict(true);
  // main(); /* Execute the main logic of our widget once jQuery is loaded */
 //});
+loadScript("https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js","https://code.jquery.com/ui/1.12.1/jquery-ui.js", function() {
+  /* Restore $ and window.jQuery to their previous values and store the
+     new jQuery in our local jQuery variables. */
+  $ = jQuery = window.jQuery.noConflict(true);
+  main(); /* Execute the main logic of our widget once jQuery is loaded */
+});
+
+
 })(); // We call our anonymous function immediately
 

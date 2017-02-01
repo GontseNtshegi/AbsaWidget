@@ -4,5 +4,7 @@
     "keywords": ["util", "functional", "server", "client", "browser"],
     "author": "ntshegg",
     "contributors": [],
-    "dependencies": {}
+    "dependencies": {
+        "jAlert":"~4.5.0"
+    }
 }

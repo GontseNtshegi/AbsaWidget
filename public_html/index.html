@@ -12,16 +12,17 @@ and open the template in the editor.
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
         
-        <!--<link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>   -->
+       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  
       
     </head>
     <body>
-        <div class="rate-me-widget"></div>
-        <script src='widget.js'></script>
-    <!--<div>
+      <div class="rate-me-widget"></div>
+       <script src='widget.js'></script>
+       
+    <!--  <div>
        <button id="rate" class="ui-button ui-widget ui-corner-all">Rate us</button>
        
        <span class="starRating" id="star">
@@ -45,31 +46,6 @@ and open the template in the editor.
            
           </div>
     </div>
-         <script>
-            
-            $(document).ready(function(){
-              
-                $('#star').hide();
-                $('.toggler').hide();
-                
-                $('button').click(function(){// hide Rate us button 
-                    $('#star').show("highlight",1000);
-                    $('button').hide();
-                    $( ".toggler" ).show( "blind", 1000 );
-                });
-                
-                $('input[type=submit]').click(function(){//when clicking send feedback
-                    alert("Rating and Feedback sent successfully");
-                    $('button').show();
-                    $( ".toggler" ).hide("blind");
-                    $('#star').hide();
-                   
-                });
-                
-               
-            });
-            
-            
-        </script>-->
+      <script src='logic.js'> </script>-->
     </body>
 </html>

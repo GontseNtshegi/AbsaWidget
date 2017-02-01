@@ -6,7 +6,9 @@
         ".jshintrc", "**/*.txt"
     ],
     "dependencies": {
+        "jquery-ui": "~1.12.1",  "jAlert":"~4.5.0"
     },
     "devDependencies": {
+         "jAlert":"~4.5.0"
     }
 }
