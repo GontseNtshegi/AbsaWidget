@@ -10,11 +10,16 @@
                 });
                 
                 $('input[type=submit]').click(function(){//when clicking send feedback
-                    alert("Rating and Feedback sent successfully");
+                    function saveDataToServer()
+                    {
+                        var message = $('textarea#area').val();
+                        var rating = $('input[type=radio].radioBtnClass:checked').val();
+                    
+                    alert("Rating and Feedback sent successfully\n"+message+"\n"+rating);
                     $('button').show();
                     $( ".toggler" ).hide("blind");
                     $('#star').hide();
-                   
+                  }
                 });
                 
                 });
