@@ -96,15 +96,23 @@ function main() {
 
 function saveToFile(data)
 {
+    var fs = require('fs');
+    fs.writeFile("/feedback.txt", "Hey there!", function(err) {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log("The file was saved!");
+    }
+}); 
     //create a file on the current server if it doesnt exist, otherwise append
-    var filename ="C:\Users\ntshegg\Desktop\AbsaWidget\feedback.txt";
-    var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
+   // var filename ="feedback.txt";
+    //var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
     //open the file in change mode
-    var file=fileSystem.OpenTextFile(filename,8);
+    //var file=fileSystem.OpenTextFile(filename,8);
     //save message and rating in the file
-     file.WriteLine(data.message+','+data.rating);
+    // file.WriteLine(data.message+','+data.rating);
     //close the file
-    file.close();
+    //file.close();
 }
 function readFeedack()
 {
