@@ -63,13 +63,14 @@ function main() {
                 
                 $('input[type=submit]').click(function(){//when clicking send feedback
                     var message = $('textarea#area').val();
-                    var rating = ($('input[type=radio]:checked').val() ||0);                   
+                    var rating = ($('input[type=radio]:checked').val() ||0); 
+                    saveToFile({message:message,rating:rating});
                     alert("Rating and Feedback sent successfully\n"+message+"\n"+rating);
-                    alert("Rating and Feedback sent successfully");
+                    
                     $('button').show();
                     $( ".toggler" ).hide("blind");
                     $('#star').hide();
-                    saveToFile({message:message,rating:rating});
+                    
                 });
     });
     $("div.rate-me-widget").html("<button id='rate' class='ui-button ui-widget ui-corner-all'>Rate us</button>"+
@@ -96,17 +97,16 @@ function main() {
 
 function saveToFile(data)
 {
-    var fs = require('fs');
-    fs.writeFile("/feedback.txt", "Hey there!", function(err) {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log("The file was saved!");
-    }
-}); 
+   if (typeof($.Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+    $.localStorage.set('message',data.messgae);
+    alert($.localStorage.get('message'));
+  }  else {
+    // Sorry! No Web Storage support..
+  }
     //create a file on the current server if it doesnt exist, otherwise append
-   // var filename ="feedback.txt";
-    //var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
+  //var filename ="feedback.txt";
+  //  var fileSystem=new ActiveXObject("Scripting.FileSystemObject");
     //open the file in change mode
     //var file=fileSystem.OpenTextFile(filename,8);
     //save message and rating in the file
